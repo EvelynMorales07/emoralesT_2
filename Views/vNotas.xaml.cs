@@ -33,18 +33,18 @@ public partial class vNotas : ContentPage
 
             if (sumaTotal >= 7)
             {
-                DisplayAlert($"Hola {estudiante}      {fecha}", $"Tus calificaciones son: \n Parcial 1: {resultadop1}\n Parcial 2: {resultadop2} \n Aprobaste con {sumaTotal} ", "OK");
+                DisplayAlert($"Hola {estudiante}      {fecha}", $"Sus notas son: \n Parcial 1: {resultadop1}\n Parcial 2: {resultadop2} \n Aprobado con {sumaTotal} ", "CERRAR");
             }
             else
             {
-                DisplayAlert($"Hola {estudiante}      {fecha}", $"Tus calificaciones son: \n Parcial 1: {resultadop1}\n Parcial 2: {resultadop2} \n Reprobaste con {sumaTotal} ", "OK");
+                DisplayAlert($"Hola {estudiante}      {fecha}", $"Sus notas son: \n Parcial 1: {resultadop1}\n Parcial 2: {resultadop2} \n Reprobado con {sumaTotal} ", "CERRAR");
 
 
             }
         }
         else
         {
-            DisplayAlert("Error", "Seleccione un estudiante", "Ok");
+            DisplayAlert("ERROR", "Seleccione un estudiante", "CERRAR");
         }
         private void txtnotaP1_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -61,7 +61,7 @@ public partial class vNotas : ContentPage
                     double nota = Convert.ToDouble(valorCampo);
                     if (nota > 10 || nota < 0)
                     {
-                        DisplayAlert("Valor incorrecto", "RANGO 0-10 ", "ok");
+                        DisplayAlert("Valor incorrecto", "RANGO 0-10 ", "CERRAR");
 
                         vaciarCampos(nombreCampo);
 
